@@ -2,6 +2,10 @@ package com.hinderproject.HinderProject.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Positive;
+
 
 @Entity
 @Data
@@ -20,12 +24,12 @@ public class Renter {
     @Column(unique = true)
     private String email;
 
-    @Notblank(message = "This section cannot be blank");
+    @NotBlank(message = "This section cannot be blank")
     private String password;
     private int age;
     private String maritalStatus;
 
-    @Positive(message = "Income must be positive");
+    @Positive(message = "Income must be positive")
     private double incomeRange;
     private String preferredQualities;
 
